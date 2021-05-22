@@ -4,20 +4,20 @@
 ![](https://img.shields.io/badge/provider-aws-orange?logo=amazon-aws)
 ![GitHub](https://img.shields.io/github/license/ysmtegsr/cloudfront-functions-sample)
 
-[ English | [Japanese](https://github.com/ysmtegsr/cloudfront-functions-sample/blob/main/README.ja.md) ]
+[ [英語](https://github.com/ysmtegsr/cloudfront-functions-sample) | 日本語 ]
 
-This is a sample repository of CloudFront Functions.Built with HCL ( Terraform ).
+CloudFront Functions の検証用サンプルリポジトリです。Terraform で構築しました。
 
-ref. [Amazon CloudFront announces CloudFront Functions, a lightweight edge compute capability](https://aws.amazon.com/about-aws/whats-new/2021/05/cloudfront-functions/?nc1=h_ls)
+ref. [Amazon CloudFront が軽量エッジコンピューティング機能である CloudFront Functions を発表](https://aws.amazon.com/jp/about-aws/whats-new/2021/05/cloudfront-functions/)
 
-## Setup
+## セットアップ
 
-Prepare CLIs.
+下記の CLI を使います。
 
 - AWS CLI
 - Terraform CLI via tfenv
 
-Create terraform var file.
+Terraform の定数ファイルを作成します。
 
 ```sh
 $ vim terraform.tfvars
@@ -31,15 +31,15 @@ bucket_name           = "cloudfront-functions-sample"
 ```
 
 
-## How to Use
+## 構築手順
 
 ```sh
-# import modules
+# 各モジュールをインポート
 $ terraform init
 
-# Dry run
+# 事前確認
 $ terraform plan --var-file=terraform.tfvars
 
-# Deploy
+# デプロイ実行
 $ terraform apply --var-file=terraform.tfvars
 ```
