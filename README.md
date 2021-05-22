@@ -43,3 +43,25 @@ $ terraform plan --var-file=terraform.tfvars
 # Deploy
 $ terraform apply --var-file=terraform.tfvars
 ```
+
+## Upload to S3
+
+Static contents upload via AWS CLI.
+
+```sh
+$ aws s3 cp ./src s3://<BUCKET NAME>/dist/ --recursive
+```
+
+
+## Destroy resources
+
+```sh
+# Delete static contents from S3 bucket
+$ aws s3 rm s3://<BUCKET NAME>/ --recursive
+
+# Dry run
+$ terraform plan --var-file=terraform.tfvar --destroy
+
+# Destroy
+$ terraform destroy --var-file=terraform.tfvar
+```

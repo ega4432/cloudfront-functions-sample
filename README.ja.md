@@ -43,3 +43,25 @@ $ terraform plan --var-file=terraform.tfvars
 # デプロイ実行
 $ terraform apply --var-file=terraform.tfvars
 ```
+
+## S3 にコンテンツをアップロード
+
+AWS CLI　を使って静的コンテンツをアップロードします。
+
+```sh
+$ aws s3 cp ./src s3://<BUCKET NAME>/dist/ --recursive
+```
+
+
+## リソースを削除
+
+```sh
+# S3 のコンテンツを全削除
+$ aws s3 rm s3://<BUCKET NAME>/ --recursive
+
+# 事前確認
+$ terraform plan --var-file=terraform.tfvar --destroy
+
+# 削除
+$ terraform destroy --var-file=terraform.tfvar
+```
