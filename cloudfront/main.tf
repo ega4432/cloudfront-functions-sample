@@ -75,7 +75,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 resource "aws_cloudfront_function" "url_normalization" {
   name    = "url_normalization"
   runtime = "cloudfront-js-1.0"
-  comment = "Appends index.html to request URLs "
+  comment = "Appends index.html to request URLs"
   publish = true
   code    = file("${path.module}/functions/sample.js")
 }

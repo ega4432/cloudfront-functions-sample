@@ -13,7 +13,3 @@ variable "public_dir" {
   type        = string
   default     = "dist"
 }
-variable "distribution_domain_name" {
-  description = "The domain name of CloudFront distribution"
-  type = string
-}
